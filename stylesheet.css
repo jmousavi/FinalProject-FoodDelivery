@@ -1,0 +1,106 @@
+#one{
+	background-image: url("https://static1.squarespace.com/static/54bbaaade4b0ad6fb5ea65dc/t/5509c27ce4b0cb471a54e817/1426703010586/Barefoot+Gourmet+Food+3.jpg?format=1500w");
+}
+#two{
+	background-image: url("https://s-media-cache-ak0.pinimg.com/736x/c0/c8/2f/c0c82f13887cc7ffbf7eeb02d1a35fec.jpg");
+}
+ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: BlanchedAlmond;
+}
+li{
+	float: left;
+}
+li a, .dropbtn{
+	display: inline-block;
+	color: #7E5B33;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+li a:hover, dropdown:hover .dropbtn{
+	background-color: #ffcc80;
+}
+.content{
+	display: none;
+	position: absolute;
+	background-color: #ffcc80;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.content a{
+	color: #7E5B33;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+.content a:hover{
+	background-color: #ffb84d;
+}
+.dropdown:hover .content{
+	display: block;
+}
+#intro{
+	font-size: 100px;
+	color: #867F27;
+	font-weight: bold;
+
+}
+.column-left{ float: left; width: 35%}
+.column-right{ float: right; width: 31%}
+.column-center{float: left; width: 34%}
+.column {
+    text-align: center;
+    font-weight: bold;
+    font-size: 80px;
+    padding-top: 250px;
+
+}
+.column a{
+	text-decoration: none;
+	color: #867F27
+}
+img{
+	width: 300px;
+	height: 300px;
+	border-radius: 10px;
+
+}
+.food-pic{
+	float: left;
+	width: 30%;
+	height: 300px;
+}
+.food-descrption{
+	float: right;
+	padding-top: 50px;
+	width: 65%;
+	height: 350px;
+}
+.food-left{
+	padding-top: 50px;
+	float: left;
+}
+.food-right{
+	float: right; width: 65%;
+
+
+}
+.food-right p{
+	height: 294px;
+	color: BlanchedAlmond;
+	font-size: 50px;
+
+}
+.btn{
+	background: #867F27;
+	color: BlanchedAlmond;
+	width: 100px;
+	height: 40px;
+    font-size: 15px;
+    border-radius: 10px;
+}
