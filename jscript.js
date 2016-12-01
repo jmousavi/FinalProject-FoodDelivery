@@ -5,7 +5,7 @@ var price = document.getElementById("food").innerHTML;
 var picture = document.getElementById("food").src;
 price = price.slice(5);
 var myCookie = getCookie("food");
-if (myCookie==null){
+if (myCookie==""){
      window.alert("does not exist");
 }
 else{
