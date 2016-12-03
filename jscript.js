@@ -1,7 +1,12 @@
-
-function add(price, id){
+//for display function
+var pictureArray = [];
+var priceArray = [];
+//for add fuction
 var arrayPrice = [];
 var arrayPicture = [];
+
+function add(price, id){
+
 var picture = document.getElementById(id).src;
 
 var priceCookie = getCookie("price");
@@ -34,6 +39,8 @@ else{
     arrayPicture.push(picture);
     pictureSave(arrayPicture);
 }
+console.log(arrayPrice.toString);
+console.log(arrayPicture.toString);
 }
 function priceSave(arrayPrice){
 var toSave = arrayPrice.toString();
@@ -44,8 +51,6 @@ var toSave = arrayPicture.toString();
 setCookie("picture", toSave);
 }
 function display(){
-    var pictureArray = [];
-    var priceArray = [];
     var holder1 = getCookie("picture");
     pictureArray = holder1.split(",");
     var holder2 = getCookie("price");
@@ -59,14 +64,19 @@ function display(){
     var x = document.createElement("img");
     x.src = pictureArray[i];
     document.getElementById("pic").appendChild(x);
+    var y = document.createElement("p");
+        y.textContent = "$" + priceArray[i];
+        document.getElementById("pic").appendChild(y);
     }
-    var text = "";
+    
     var total=0;
     for(var i=0; i<priceArray.length; i++){
+        //var x = document.createElement("p");
+        //x.textContent = "$" + priceArray[i];
+        //document.getElementById("food").appendChild(x);
         total+=Number(priceArray[i]);
-        text+="$"+priceArray[i]+"<br>";
     }
-    document.getElementById("cart").innerHTML= text+"<br>$"+total;
+    document.getElementById("cart").innerHTML= "$"+total;
     }
 }
 //courtesy of w3schools at http://www.w3schools.com/js/js_cookies.asp
