@@ -64,9 +64,15 @@ function display(){
     var x = document.createElement("img");
     x.src = pictureArray[i];
     document.getElementById("pic").appendChild(x);
-    var y = document.createElement("p");
-        y.textContent = "$" + priceArray[i];
-        document.getElementById("pic").appendChild(y);
+    var z = document.createElement("p");
+        z.textContent = "$" + priceArray[i];
+        document.getElementById("pic").appendChild(z);
+    var delBut = document.createElement("button");
+    var t = document.createTextNode("Delete");
+    delBut.appendChild(t);
+    delBut.className="btn";
+    delBut.addEventListener("click",delete(i));
+    z.appendChild(delBut);
     }
     
     var total=0;

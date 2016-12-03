@@ -96,8 +96,7 @@ img{
 	font-size: 50px;
 
 }
-p{
-	height: 294px;
+#pic p{
 	color: BlanchedAlmond;
 	font-size: 50px;
 
@@ -120,7 +119,14 @@ p{
 	width: 100%;
 	text-align: center;
 }
-
+.btn2{
+	background: #867F27;
+	color: BlanchedAlmond;
+	width: 100px;
+	height: 40px;
+    font-size: 15px;
+    border-radius: 10px;
+}
 
 
 
