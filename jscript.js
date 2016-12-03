@@ -39,8 +39,8 @@ else{
     arrayPicture.push(picture);
     pictureSave(arrayPicture);
 }
-console.log(arrayPrice.toString);
-console.log(arrayPicture.toString);
+console.log(arrayPrice.toString());
+console.log(arrayPicture.toString());
 }
 function priceSave(arrayPrice){
 var toSave = arrayPrice.toString();
@@ -76,6 +76,7 @@ function display(){
         //document.getElementById("food").appendChild(x);
         total+=Number(priceArray[i]);
     }
+    total = Math.round(total*100)/100;
     document.getElementById("cart").innerHTML= "$"+total;
     }
 }

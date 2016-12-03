@@ -110,14 +110,16 @@ p{
     font-size: 15px;
     border-radius: 10px;
 }
-/*#c{
+#c{
 	float: left;
 	width: 30%;
 	padding-top: 50px;
 }
 #pic{
+	padding-top: 50px;
 	width: 100%;
-}*/
+	text-align: center;
+}
 
 
 
