@@ -75,12 +75,12 @@ img{
 	width: 30%;
 	height: 300px;
 }
-.food-descrption{
+/*.food-description{
 	float: right;
 	padding-top: 50px;
 	width: 65%;
 	height: 350px;
-}
+}*/
 .food-left{
 	padding-top: 50px;
 	float: left;
@@ -91,6 +91,12 @@ img{
 
 }
 .food-right p{
+	height: 294px;
+	color: BlanchedAlmond;
+	font-size: 50px;
+
+}
+p{
 	height: 294px;
 	color: BlanchedAlmond;
 	font-size: 50px;
