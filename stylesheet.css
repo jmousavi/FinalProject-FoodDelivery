@@ -128,6 +128,53 @@ img{
     border-radius: 10px;
 }
 
+.divider{
+    width:5px;
+    height:auto;
+    display:inline-block;
+    padding-left: 20px;
+}
+
+
+.delItem{
+	text-align: center;
+	color: BlanchedAlmond;
+	font-size: 30px;
+	padding: 30px;
+	width: 85%;
+}
+#cart{
+	font-size: 40px;
+	color: BlanchedAlmond;
+	text-align: right;
+	padding-right: 20px;
+}
+.linker{
+	text-decoration: none;
+	font-size: 15px;
+	color: BlanchedAlmond;
+}
+#check{
+	color: BlanchedAlmond;
+	font-size: 50px;
+}
+#credits{
+	color: BlanchedAlmond;
+	font-size: 40px;
+	text-decoration: none;
+	text-align: center;
+}
+#cred{
+	text-align: center;
+	padding-top: 20px;
+}
+
+#c{
+	color: #867F27;
+	font-size: 60px;
+	width: 100%;
+}
+
 
 
 
