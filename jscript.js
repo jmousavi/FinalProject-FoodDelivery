@@ -4,6 +4,7 @@ var priceArray = [];
 var total = 0;
 var arrayPrice = [];
 var arrayPicture = [];
+var checked = false;
 
 function add(price, id){
 
@@ -102,6 +103,7 @@ function display(){
         total+=Number(priceArray[i]);
     }
     total = Math.round(total*100)/100;
+    total = total.toFixed(2);
     document.getElementById("cart").innerHTML= "Total<br>$"+total;
     }
     setCookie("total",total);
@@ -179,8 +181,128 @@ function clear(){
 }
 function checkoutDisplay(){
     var total = getCookie("total");
-    console.log(total);
-    document.getElementById("check").innerHTML="Your Total is<br>$"+total;
+   /* if(total==0){
+      var empty = document.createElement("div");
+      var text = document.createTextNode("Your cart is empty");
+      empty.appendChild(text);
+      document.getElementById("checks").appendChild(empty);
+    }
+    else{*/
+    var gTotal = Number(total)+4;
+    gTotal = gTotal.toFixed(2);
+    var parent = document.createElement("div");
+        document.getElementById("checks").appendChild(parent);
+        var grandTotal = document.createElement("p");
+        grandTotal.innerHTML= "Total: $"+ total+"<br>Delivery Fee: $4.00<br>Grand Total: $"+gTotal+"<br><br>How will you be paying?<br>";
+        parent.appendChild(grandTotal);
+
+        var cash = document.createTextNode("Cash");
+        var card = document.createTextNode("Card");
+
+        var divider = document.createElement("div");
+        divider.className="divider";
+
+        var cashCheckbox = document.createElement("input");
+        cashCheckbox.type = "checkbox";
+        cashCheckbox.id = "cashCheck";
+        //cashCheckbox.className = "checker";
+        var cardCheckbox = document.createElement("input");
+        cardCheckbox.type = "checkbox";
+        cardCheckbox.id = "cardCheck";
+        cardCheckbox.addEventListener("click",getInfo)
+        grandTotal.appendChild(cash);
+        grandTotal.appendChild(cashCheckbox);
+        grandTotal.appendChild(divider);
+        grandTotal.appendChild(card);
+        grandTotal.appendChild(cardCheckbox);
+
+        var secondDiv = document.createElement("div");
+        document.getElementById("deliv").appendChild(secondDiv);
+        var deliveryText = document.createTextNode("Where would you like your food delivered?");
+        secondDiv.appendChild(deliveryText);
+        var newP = document.createElement("div");
+        newP.innerHTML = "Enter your adress:<br>"
+        var address = document.createElement("input");
+        address.id = "addy";
+        var divider2 = document.createElement("div");
+        divider2.className="divider";
+        secondDiv.appendChild(newP);
+        newP.appendChild(address);
+        address.addEventListener("change",saveAddress);
+        var finishButton = document.createElement("button");
+    var finishText = document.createTextNode("Finish");
+    finishButton.className = "btn2";
+    var link = document.createElement("a");
+    link.className="linker";
+    link.href="finish.html"
+    link.appendChild(finishText);
+    finishButton.appendChild(link);
+    secondDiv.appendChild(finishButton);
+}
+function saveAddress(){
+  var address = document.getElementById("addy").value;
+  setCookie("savedAddress",address);
+
+}
+function getInfo(){
+   var parent=this.parentNode;
+
+  if(checked == false){
+  var child = document.createElement("div");
+   child.id = "bob";
+  parent.appendChild(child);
+  console.log(parent);
+  var text = document.createTextNode("Enter Credit Card Number:");
+  text.id = "t";
+  var cardInput = document.createElement("input");
+  cardInput.id = "ci";
+  cardInput.addEventListener("change",saveCard);
+  child.appendChild(text);
+  child.appendChild(cardInput);
+  checked = true;
+
+}
+else{
+  var x = document.getElementById("bob");
+  parent.removeChild(x);
+  checked=false;
+}
+}
+function saveCard(){
+  var card = document.getElementById("ci").value;
+  setCookie("cardInfo", card);
+}
+function finishDisplay(){
+  var card = getCookie("cardInfo");
+  var address = getCookie("savedAddress");
+  total = getCookie("total");
+  if(total==0){
+    document.getElementById("deliv").innerHTML="Your cart is empty";
+  }
+  else{
+  if(card==""||card=="undefined"){
+    if(address=="undefined"||address==""){
+      document.getElementById("deliv").innerHTML="Please press the back button and enter address";
+    }
+    else{
+      var grandTotal = Number(total)+4;
+      grandTotal = grandTotal.toFixed(2);
+      var address = getCookie("savedAddress");
+      document.getElementById("deliv").innerHTML="You will owe $"+grandTotal+" cash<br>Your food item(s) will be delivered to:<br>"+address;
+    }
+  }
+  else{
+    if(address=="undefined"||address==""){
+      document.getElementById("deliv").innerHTML="Please press the back button and enter address";
+    }
+    else{
+      var grandTotal = Number(total)+4;
+      grandTotal = grandTotal.toFixed(2);
+      var address = getCookie("savedAddress");
+      document.getElementById("deliv").innerHTML="Your food item(s) will be delivered to:<br>"+address;
+    }
+  }
+}
 }
 //courtesy of w3schools at http://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname,cvalue,exdays) {

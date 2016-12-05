@@ -154,9 +154,10 @@ img{
 	font-size: 15px;
 	color: BlanchedAlmond;
 }
-#check{
+#checks{
 	color: BlanchedAlmond;
 	font-size: 50px;
+	text-align: center;
 }
 #credits{
 	color: BlanchedAlmond;
@@ -174,7 +175,11 @@ img{
 	font-size: 60px;
 	width: 100%;
 }
-
+#deliv{
+	color: BlanchedAlmond;
+	font-size: 50px;
+	text-align: center;
+}
 
 
 
