@@ -173,147 +173,154 @@ function clear(){
 }
 function checkoutDisplay(){
 	var total = getCookie("total");
-	/* if(total==0){
-	   var empty = document.createElement("div");
-	   var text = document.createTextNode("Your cart is empty");
-	   empty.appendChild(text);
-	   document.getElementById("checks").appendChild(empty);
-	   }
-	   else{*/
-	var gTotal = Number(total)+4;
-	gTotal = gTotal.toFixed(2);
-	var parent = document.createElement("div");
-	document.getElementById("checks").appendChild(parent);
-	var grandTotal = document.createElement("p");
-	grandTotal.innerHTML= "Total: $"+ total+"<br>Delivery Fee: $4.00<br>Grand Total: $"+gTotal+"<br><br>How will you be paying?<br>";
-	parent.appendChild(grandTotal);
-
-	var cash = document.createTextNode("Cash");
-	var card = document.createTextNode("Card");
-
-	var divider = document.createElement("div");
-	divider.className="divider";
-
-	var cashCheckbox = document.createElement("input");
-	cashCheckbox.type = "checkbox";
-	cashCheckbox.id = "cashCheck";
-	//cashCheckbox.className = "checker";
-	var cardCheckbox = document.createElement("input");
-	cardCheckbox.type = "checkbox";
-	cardCheckbox.id = "cardCheck";
-	cardCheckbox.addEventListener("click",getInfo)
-		grandTotal.appendChild(cash);
-	grandTotal.appendChild(cashCheckbox);
-	grandTotal.appendChild(divider);
-	grandTotal.appendChild(card);
-	grandTotal.appendChild(cardCheckbox);
-
-	var secondDiv = document.createElement("div");
-	document.getElementById("deliv").appendChild(secondDiv);
-	var deliveryText = document.createTextNode("Where would you like your food delivered?");
-	secondDiv.appendChild(deliveryText);
-	var newP = document.createElement("div");
-	newP.innerHTML = "Enter your adress:<br>"
-		var address = document.createElement("input");
-	address.id = "addy";
-	var divider2 = document.createElement("div");
-	divider2.className="divider";
-	secondDiv.appendChild(newP);
-	newP.appendChild(address);
-	address.addEventListener("change",saveAddress);
-	var finishButton = document.createElement("button");
-	var finishText = document.createTextNode("Finish");
-	finishButton.className = "btn2";
-	var link = document.createElement("a");
-	link.className="linker";
-	link.href="finish.html"
-		link.appendChild(finishText);
-	finishButton.appendChild(link);
-	secondDiv.appendChild(finishButton);
-}
-function saveAddress(){
-	var address = document.getElementById("addy").value;
-	setCookie("savedAddress",address);
-
-}
-function getInfo(){
-	var parent=this.parentNode;
-
-	if(checked == false){
-		var child = document.createElement("div");
-		child.id = "bob";
-		parent.appendChild(child);
-		var text = document.createTextNode("Enter Credit Card Number:");
-		text.id = "t";
-		var cardInput = document.createElement("input");
-		cardInput.id = "ci";
-		cardInput.addEventListener("change",saveCard);
-		child.appendChild(text);
-		child.appendChild(cardInput);
-		checked = true;
-
-	}
-	else{
-		var x = document.getElementById("bob");
-		parent.removeChild(x);
-		checked=false;
-	}
-}
-function saveCard(){
-	var card = document.getElementById("ci").value;
-	setCookie("cardInfo", card);
-}
-function finishDisplay(){
-	var card = getCookie("cardInfo");
-	var address = getCookie("savedAddress");
-	total = getCookie("total");
 	if(total==0){
-		document.getElementById("deliv").innerHTML="Your cart is empty";
+		var text = "Your cart is empty, click menu to add into your cart!";
+		var parent = document.getElementById("checks");
+		parent.innerHTML="Your cart is empty, click menu and add items into your cart!";
 	}
 	else{
-		if(card==""||card=="undefined"){
-			if(address=="undefined"||address==""){
-				document.getElementById("deliv").innerHTML="Please press the back button and enter address";
-			}
-			else{
-				var grandTotal = Number(total)+4;
-				grandTotal = grandTotal.toFixed(2);
-				var address = getCookie("savedAddress");
-				document.getElementById("deliv").innerHTML="You will owe $"+grandTotal+" cash<br>Your food item(s) will be delivered to:<br>"+address;
-			}
+		/* if(total==0){
+		   var empty = document.createElement("div");
+		   var text = document.createTextNode("Your cart is empty");
+		   empty.appendChild(text);
+		   document.getElementById("checks").appendChild(empty);
+		   }
+		   else{*/
+		var gTotal = Number(total)+4;
+		gTotal = gTotal.toFixed(2);
+		var parent = document.createElement("div");
+		document.getElementById("checks").appendChild(parent);
+		var grandTotal = document.createElement("p");
+		grandTotal.innerHTML= "Total: $"+ total+"<br>Delivery Fee: $4.00<br>Grand Total: $"+gTotal+"<br><br>How will you be paying?<br>";
+		parent.appendChild(grandTotal);
+
+		var cash = document.createTextNode("Cash");
+		var card = document.createTextNode("Card");
+
+		var divider = document.createElement("div");
+		divider.className="divider";
+
+		var cashCheckbox = document.createElement("input");
+		cashCheckbox.type = "checkbox";
+		cashCheckbox.id = "cashCheck";
+		//cashCheckbox.className = "checker";
+		var cardCheckbox = document.createElement("input");
+		cardCheckbox.type = "checkbox";
+		cardCheckbox.id = "cardCheck";
+		cardCheckbox.addEventListener("click",getInfo)
+			grandTotal.appendChild(cash);
+		grandTotal.appendChild(cashCheckbox);
+		grandTotal.appendChild(divider);
+		grandTotal.appendChild(card);
+		grandTotal.appendChild(cardCheckbox);
+
+		var secondDiv = document.createElement("div");
+		document.getElementById("deliv").appendChild(secondDiv);
+		var deliveryText = document.createTextNode("Where would you like your food delivered?");
+		secondDiv.appendChild(deliveryText);
+		var newP = document.createElement("div");
+		newP.innerHTML = "Enter your adress:<br>"
+			var address = document.createElement("input");
+		address.id = "addy";
+		var divider2 = document.createElement("div");
+		divider2.className="divider";
+		secondDiv.appendChild(newP);
+		newP.appendChild(address);
+		address.addEventListener("change",saveAddress);
+		var finishButton = document.createElement("button");
+		var finishText = document.createTextNode("Finish");
+		finishButton.className = "btn2";
+		var link = document.createElement("a");
+		link.className="linker";
+		link.href="finish.html"
+			link.appendChild(finishText);
+		finishButton.appendChild(link);
+		secondDiv.appendChild(finishButton);
+	}
+	}
+	function saveAddress(){
+		var address = document.getElementById("addy").value;
+		setCookie("savedAddress",address);
+
+	}
+	function getInfo(){
+		var parent=this.parentNode;
+
+		if(checked == false){
+			var child = document.createElement("div");
+			child.id = "bob";
+			parent.appendChild(child);
+			var text = document.createTextNode("Enter Credit Card Number:");
+			text.id = "t";
+			var cardInput = document.createElement("input");
+			cardInput.id = "ci";
+			cardInput.addEventListener("change",saveCard);
+			child.appendChild(text);
+			child.appendChild(cardInput);
+			checked = true;
+
 		}
 		else{
-			if(address=="undefined"||address==""){
-				document.getElementById("deliv").innerHTML="Please press the back button and enter address";
+			var x = document.getElementById("bob");
+			parent.removeChild(x);
+			checked=false;
+		}
+	}
+	function saveCard(){
+		var card = document.getElementById("ci").value;
+		setCookie("cardInfo", card);
+	}
+	function finishDisplay(){
+		var card = getCookie("cardInfo");
+		var address = getCookie("savedAddress");
+		total = getCookie("total");
+		if(total==0){
+			document.getElementById("deliv").innerHTML="Your cart is empty";
+		}
+		else{
+			if(card==""||card=="undefined"){
+				if(address=="undefined"||address==""){
+					document.getElementById("deliv").innerHTML="Please press the back button and enter address";
+				}
+				else{
+					var grandTotal = Number(total)+4;
+					grandTotal = grandTotal.toFixed(2);
+					var address = getCookie("savedAddress");
+					document.getElementById("deliv").innerHTML="You will owe $"+grandTotal+" cash<br>Your food item(s) will be delivered to:<br>"+address;
+				}
 			}
 			else{
-				var grandTotal = Number(total)+4;
-				grandTotal = grandTotal.toFixed(2);
-				var address = getCookie("savedAddress");
-				document.getElementById("deliv").innerHTML="Your food item(s) will be delivered to:<br>"+address;
+				if(address=="undefined"||address==""){
+					document.getElementById("deliv").innerHTML="Please press the back button and enter address";
+				}
+				else{
+					var grandTotal = Number(total)+4;
+					grandTotal = grandTotal.toFixed(2);
+					var address = getCookie("savedAddress");
+					document.getElementById("deliv").innerHTML="Your food item(s) will be delivered to:<br>"+address;
+				}
 			}
 		}
 	}
-}
-//courtesy of w3schools at http://www.w3schools.com/js/js_cookies.asp
-function setCookie(cname,cvalue,exdays) {
-	var d = new Date();
-	d.setTime(d.getTime() + (exdays*24*60*60*1000));
-	var expires = "expires=" + d.toGMTString();
-	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-//courtesy of w3schools at http://www.w3schools.com/js/js_cookies.asp
-function getCookie(cname) {
-	var name = cname + "=";
-	var ca = document.cookie.split(';');
-	for(var i = 0; i < ca.length; i++) {
-		var c = ca[i];
-		while (c.charAt(0) == ' ') {
-			c = c.substring(1);
-		}
-		if (c.indexOf(name) == 0) {
-			return c.substring(name.length, c.length);
-		}
+	//courtesy of w3schools at http://www.w3schools.com/js/js_cookies.asp
+	function setCookie(cname,cvalue,exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires=" + d.toGMTString();
+		document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 	}
-	return "";
-}
+	//courtesy of w3schools at http://www.w3schools.com/js/js_cookies.asp
+	function getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) == ' ') {
+				c = c.substring(1);
+			}
+			if (c.indexOf(name) == 0) {
+				return c.substring(name.length, c.length);
+			}
+		}
+		return "";
+	}
