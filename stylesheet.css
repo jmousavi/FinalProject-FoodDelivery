@@ -1,3 +1,5 @@
+/*Author: Jasmin Mousavi
+Final Project: Ordering Food*/
 #one{
 	background-image: url("https://static1.squarespace.com/static/54bbaaade4b0ad6fb5ea65dc/t/5509c27ce4b0cb471a54e817/1426703010586/Barefoot+Gourmet+Food+3.jpg?format=1500w");
 }
@@ -54,10 +56,10 @@ li a:hover, dropdown:hover .dropbtn{
 .column-right{ float: right; width: 31%}
 .column-center{float: left; width: 34%}
 .column {
-    text-align: center;
-    font-weight: bold;
-    font-size: 80px;
-    padding-top: 250px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 80px;
+	padding-top: 250px;
 
 }
 .column a{
@@ -76,10 +78,10 @@ img{
 
 }
 /*.food-description{
-	float: right;
-	padding-top: 50px;
-	width: 65%;
-	height: 350px;
+float: right;
+padding-top: 50px;
+width: 65%;
+height: 350px;
 }*/
 .food-left{
 	padding-top: 50px;
@@ -106,8 +108,8 @@ img{
 	color: BlanchedAlmond;
 	width: 100px;
 	height: 40px;
-    font-size: 15px;
-    border-radius: 10px;
+	font-size: 15px;
+	border-radius: 10px;
 }
 #c{
 	float: left;
@@ -124,15 +126,15 @@ img{
 	color: BlanchedAlmond;
 	width: 100px;
 	height: 40px;
-    font-size: 15px;
-    border-radius: 10px;
+	font-size: 15px;
+	border-radius: 10px;
 }
 
 .divider{
-    width:5px;
-    height:auto;
-    display:inline-block;
-    padding-left: 20px;
+	width:5px;
+	height:auto;
+	display:inline-block;
+	padding-left: 20px;
 }
 
 
@@ -159,7 +161,7 @@ img{
 	font-size: 50px;
 	text-align: center;
 }
-#credits{
+.credits{
 	color: BlanchedAlmond;
 	font-size: 40px;
 	text-decoration: none;
@@ -170,7 +172,7 @@ img{
 	padding-top: 20px;
 }
 
-#c{
+.c{
 	color: #867F27;
 	font-size: 60px;
 	width: 100%;
